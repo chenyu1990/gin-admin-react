@@ -307,7 +307,6 @@ const TableList = props => {
             }
             return [];
           }}
-          initialValues={stepFormValues}
           width={600}
           layoutType={layoutType}
           onFinish={async values => {
