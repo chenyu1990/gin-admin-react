@@ -283,7 +283,7 @@ const MenuEditor = props => {
                               setResourceTitle(row.name);
                             }}>资源管理</a>],
                           onValuesChange: (record, recordList) => {
-                            const menu_id = initialValues?.id || new Date.now();
+                            const menu_id = initialValues?.id || Date.now();
                             const actions = recordList.map(item => ({ ...item, menu_id }));
                             setActionDataSource(actions);
                           },
