@@ -5,7 +5,12 @@ const jsonToArr = (data, idField, parentField, sortFunc) => {
       if (!dataJson[item[parentField]]) {
         dataJson[item[parentField]] = { children: [] };
       }
-      dataJson[item[parentField]].children.push(item);
+    }
+  });
+
+  data?.map?.(item => {
+    if (parentField && item[parentField] > 0) {
+      dataJson[item[parentField]].children?.push(item);
     } else {
       dataJson[item[idField]] = { ...item, ...dataJson[item[idField]] };
     }
